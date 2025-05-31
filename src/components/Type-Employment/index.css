@@ -1,0 +1,9 @@
+.checkbox-container
+{
+    display:flex;
+}
+.labels
+{
+    color:white;
+    margin-left:5px;
+}

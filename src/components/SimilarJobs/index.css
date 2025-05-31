@@ -1,0 +1,16 @@
+.similar-job-item
+{
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    color: #ffffff;
+}
+
+.similar-jobs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}

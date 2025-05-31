@@ -1,0 +1,101 @@
+.jobs-main-container{
+    background-color: black;
+    min-height:100%;
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    justify-content:center;
+    padding:20px;
+}
+.horizantal-line
+{
+    color: white;
+    background-color: white;
+    margin-top: 80px;
+}
+.jobs-searchbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:200px;
+    
+}
+.profile-container
+{
+margin-top: 10px;
+background-image: url("https://assets.ccbp.in/frontend/react-js/profile-bg.png");
+height:240px;
+width:300px;
+background-size: cover;
+display: flex;
+flex-direction: column;
+gap:20px;
+padding: 10px;
+border-radius: 10px;
+}
+.type
+{
+    color: #d1d5db;
+}
+.jobs-item-container
+{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jobs-searchbar-input {
+    width: 400px;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color:black;
+    color: #fff;
+    margin:0px
+}
+.loader-container
+{
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+
+@media (min-width: 768px) {
+    .jobs-searchbar-input {
+        width: 80;
+    }
+}
+
+.jobs-searchbar-btn {
+    margin-left: 8px;
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.jobs-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.loader-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+.horizantal-linesalary
+{
+    color: white;
+    background-color: white;
+    margin-top: 10px;
+}
