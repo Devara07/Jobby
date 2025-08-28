@@ -2,7 +2,6 @@ import "./index.css";
 const SalaryRanges = ({salary,salaryfilter}) => {
     const { id, label } = salary;
     const selectedoption = (event) => {
-        
         salaryfilter(id);
     };
 

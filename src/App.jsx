@@ -2,9 +2,8 @@ import Home from './components/Home'
 import { BrowserRouter, Route, Routes } from 'react-router';
 import LoginForm from './components/LoginForm';
 import Jobs from './components/Jobs';
-import './App.css'
 import ProtectedRoute from './components/ProtectedRoute';
-import JobDetails from './components/jobdetails'
+import JobDetails from './components/JobDetails'
 
 const App = () => (
   <BrowserRouter>

@@ -14,7 +14,6 @@ const JobDetails=()=>{
     const [isLoading,setisLoading]=useState(true)
     const [jobdetail,setjobdetails]=useState({})
    const {id} = useParams()
-    console.log(id)
     useEffect(()=>{
         const details= async ()=>{
             const api=`https://apis.ccbp.in/jobs/${id}`
@@ -68,7 +67,7 @@ const JobDetails=()=>{
             }
         }
         details()
-    },[])
+    },[id])
     return(
         <div className="job-details-container">
             {isLoading ? (

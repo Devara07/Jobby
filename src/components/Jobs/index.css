@@ -60,6 +60,7 @@ border-radius: 10px;
     display: flex;
     justify-content: center;
     color:white;
+    min-height: 120vh;
 }
 
 @media (min-width: 768px) {

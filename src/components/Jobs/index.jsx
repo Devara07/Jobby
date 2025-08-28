@@ -1,6 +1,6 @@
 import "./index.css";
 import Header from "../Header";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import JobItem from "../Job-Item";
 import Cookies from 'js-cookie';
 import BeatLoader from "react-spinners/BeatLoader";
@@ -41,58 +41,58 @@ const Jobs = () => {
     setSalaryFilter(salary);
   };
 
-  const fetchJobs = async () => {
-    setisloading(true);
-    let baseUrl = `https://apis.ccbp.in/jobs`;
-    let queryParams = [];
+    const fetchJobs = useCallback(async () => {
+      setisloading(true);
+      let baseUrl = `https://apis.ccbp.in/jobs`;
+      let queryParams = [];
 
-    if (employmentfilters.length > 0) {
-      queryParams.push(`employment_type=${employmentfilters.join(",")}`);
-    }
-    if (salaryfilters !== "") {
-      queryParams.push(`minimum_package=${salaryfilters}`);
-    }
-    if (searchinput !== "") {
-      queryParams.push(`search=${searchinput}`);
-    }
+      if (employmentfilters.length > 0) {
+        queryParams.push(`employment_type=${employmentfilters.join(",")}`);
+      }
+      if (salaryfilters !== "") {
+        queryParams.push(`minimum_package=${salaryfilters}`);
+      }
+      if (searchinput !== "") {
+        queryParams.push(`search=${searchinput}`);
+      }
 
-    let apiurl = `${baseUrl}?${queryParams.join("&")}`;
-    console.log("Final API URL:", apiurl);
+      let apiurl = `${baseUrl}?${queryParams.join("&")}`;
+      console.log("Final API URL:", apiurl);
 
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("jwt_token")}`,
-      },
-    };
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("jwt_token")}`,
+        },
+      };
 
-    try {
-      const response = await fetch(apiurl, options);
-      const data = await response.json();
-      const formattedJobs = data.jobs.map((job) => ({
-        id: job.id,
-        title: job.title,
-        company: job.company,
-        location: job.location,
-        employmentType: job.employment_type,
-        rating: job.rating,
-        jobDescription: job.job_description,
-        companyLogoUrl: job.company_logo_url,
-        salary: job.package_per_annum,
-      }));
-      setJobs(formattedJobs);
-    } catch (error) {
-      console.error("Error fetching jobs:", error);
-      setJobs([]);
-    } finally {
-      setisloading(false);
-    }
-  };
+      try {
+        const response = await fetch(apiurl, options);
+        const data = await response.json();
+        const formattedJobs = data.jobs.map((job) => ({
+          id: job.id,
+          title: job.title,
+          company: job.company,
+          location: job.location,
+          employmentType: job.employment_type,
+          rating: job.rating,
+          jobDescription: job.job_description,
+          companyLogoUrl: job.company_logo_url,
+          salary: job.package_per_annum,
+        }));
+        setJobs(formattedJobs);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+        setJobs([]);
+      } finally {
+        setisloading(false);
+      }
+    }, [searchinput, salaryfilters, employmentfilters]) ; 
 
   useEffect(() => {
     fetchJobs();
-  }, [searchinput, salaryfilters, employmentfilters]);
+  }, [fetchJobs]);
 
   const searchInputSetter = (event) => {
     setSearchInput(event.target.value);

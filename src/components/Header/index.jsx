@@ -11,9 +11,9 @@ const Header = () => {
         navigate('/login',{replace: true});
     }
 
-    const Jobspage = () => {
-        navigate('/jobs');
-    }
+    // const Jobspage = () => {
+    //     navigate('/jobs');
+    // }
 
     return (
         <div className="header-container">

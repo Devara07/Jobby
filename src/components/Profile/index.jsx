@@ -14,8 +14,8 @@ const options={
     "Authorization":`Bearer ${cookie}`,
         }
     }
-    const api='https://apis.ccbp.in/profile'
-    const response=await fetch('https://apis.ccbp.in/profile',options)
+    const api='https://apis.ccbp.in/profile';
+    const response=await fetch(api,options)
     if(response.ok)
     {
         const data=await response.json()
