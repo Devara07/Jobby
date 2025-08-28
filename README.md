@@ -1,8 +1,31 @@
-# React + Vite
+# Jobby
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Jobby** is my first big web application 🚀  
+It helps users explore job opportunities based on **salary (LPA)** and **technology stacks**.
+Deployed on **Vercel** for quick and easy access.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- 🔎 Search jobs by **LPA (salary)**
+- 💻 Filter jobs by **Tech Stack** (MERN, Java, Python, etc.)
+- 📱 Responsive UI (works on desktop & mobile)
+- ⚡ Fast and interactive interface
+
+> ⚠️ Note: Currently optimizing mobile responsiveness. Desktop view works best, mobile improvements coming soon.
+---
+
+## 🌐 Live Demo
+👉 [Click here to try Jobby](jobby-navy.vercel.app)
+
+---
+
+## 💡 About This Project
+This is the **first big web app I built** as part of my learning journey in web development.  
+Through Jobby, I practiced:
+- Using React components effectively  
+- Managing state and props  
+- Building real-world features like search & filters  
+- Deploying a project on Vercel  
+
+---
