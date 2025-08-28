@@ -69,8 +69,7 @@ function LoginForm() {
                 <img src='https://assets.ccbp.in/frontend/react-js/logo-img.png'
                      alt='Webiste Logo'
                      className='login-logo' 
-                />
-                
+                />                
                 <form onSubmit={submitForm}>
                     <div className='input-grp'>
                         {renderUsernameField()}
