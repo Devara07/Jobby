@@ -5,7 +5,7 @@ import Jobs from './components/Jobs';
 import ProtectedRoute from './components/ProtectedRoute';
 import JobDetails from './components/JobDetails'
 import NotFoundjobs from './components/NotFoundjobs/index.jsx';
-import JobsLayout from './components/JobsLayout/index.jsx';
+
 
 const App = () => (
   <BrowserRouter>
@@ -15,7 +15,7 @@ const App = () => (
       } />
       <Route path="/login" element={<LoginForm />} />
 
-      <Route path="/jobs" element={<JobsLayout />}>
+      <Route path="/jobs">
         <Route index element={<ProtectedRoute><Jobs /></ProtectedRoute>} />
         <Route path=":id" element={<ProtectedRoute><JobDetails /></ProtectedRoute>} />
         <Route path="*" element={<NotFoundjobs />} />
